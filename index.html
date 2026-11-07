@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A digital archive for documenting and exploring local cultural heritage." />
+  <title>LCHA — Local Cultural Heritage Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="announcement"><span class="announcement-dot"></span> A living archive of the stories that shape us <span class="announcement-note">COMMUNITY ARCHIVE</span></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="LCHA home">
+      <span class="brand-mark">L</span>
+      <span class="brand-copy"><strong>LOK<span>.</span></strong><small>LOCAL CULTURAL HERITAGE ARCHIVE</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#archive" data-nav="archive">Explore archive</a>
+      <a href="#collections" data-nav="collections">Collections</a>
+      <a href="#about" data-nav="about">About</a>
+    </nav>
+    <div class="header-actions">
+      <span class="user-chip" id="userChip">Guest visitor</span>
+      <a class="button button-small button-dark" href="#contribute">Contribute <span>↗</span></a>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- HOME -->
+    <section class="page active" id="page-home" data-page="home">
+      <section class="hero">
+        <div class="hero-image" role="img" aria-label="Historic Indian architecture"></div>
+        <div class="hero-shade"></div>
+        <div class="hero-content wrap">
+          <p class="eyebrow light"><span></span> MEMORY • PLACE • PEOPLE</p>
+          <h1>Every place holds<br><em>a thousand stories.</em></h1>
+          <p class="hero-intro">A community-led archive for the photographs, traditions, voices and memories that deserve to be remembered.</p>
+          <div class="hero-actions">
+            <a class="button button-cream" href="#archive">Explore the archive <span>↗</span></a>
+            <a class="text-link light-link" href="#contribute">Share a story <span>↗</span></a>
+          </div>
+          <div class="hero-caption"><span>01 / 04</span><span>THE PAST IS A PLACE WE CAN VISIT</span></div>
+        </div>
+      </section>
+
+      <section class="intro-strip wrap">
+        <div class="intro-label">OUR PURPOSE</div>
+        <p>Culture lives in everyday details — in a recipe passed down, a festival remembered, a photograph kept safe in a drawer. <strong>LOK brings these fragments together.</strong></p>
+        <a href="#about" class="round-arrow" aria-label="Read about LOK">↗</a>
+      </section>
+
+      <section class="section wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow">A WINDOW INTO OUR PAST</p><h2>Explore the archive<span class="accent">.</span></h2></div>
+          <a href="#archive" class="text-link">View all records <span>↗</span></a>
+        </div>
+        <div class="category-grid" id="homeCategories">
+          <button class="category-tile category-large" data-category="Places"><span class="tile-number">01</span><span class="tile-title">Places &amp; architecture</span><span class="tile-arrow">↗</span></button>
+          <button class="category-tile category-festival" data-category="Festivals"><span class="tile-number">02</span><span class="tile-title">Festivals &amp; rituals</span><span class="tile-arrow">↗</span></button>
+          <button class="category-tile category-craft" data-category="Art & Craft"><span class="tile-number">03</span><span class="tile-title">Art &amp; craft</span><span class="tile-arrow">↗</span></button>
+          <button class="category-tile category-food" data-category="Food"><span class="tile-number">04</span><span class="tile-title">Food &amp; memory</span><span class="tile-arrow">↗</span></button>
+        </div>
+      </section>
+
+      <section class="featured-band">
+        <div class="wrap featured-layout">
+          <div><p class="eyebrow light">CURATED WITH CARE</p><h2>Small details.<br><em>Endless meaning.</em></h2><p class="muted-light">Discover the people, practices and places behind the culture of a region.</p><a class="button button-cream" href="#collections">Discover collections <span>↗</span></a></div>
+          <div class="featured-quote"><span class="quote-mark">“</span><blockquote>A community is not only what it builds, but what it chooses to remember.</blockquote><small>— LOK ARCHIVE PRINCIPLE</small></div>
+        </div>
+      </section>
+
+      <section class="section wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow">RECENTLY PRESERVED</p><h2>Stories worth keeping<span class="accent">.</span></h2></div>
+          <a href="#archive" class="text-link">Browse archive <span>↗</span></a>
+        </div>
+        <div class="record-grid" id="homeRecords"></div>
+      </section>
+      <section class="cta-section wrap">
+        <div><p class="eyebrow">YOUR MEMORY MATTERS</p><h2>Have a story to add?</h2><p>Help make local heritage easier to discover for the next generation.</p></div>
+        <a class="button button-dark" href="#contribute">Become a contributor <span>↗</span></a>
+      </section>
+    </section>
+
+    <!-- ARCHIVE -->
+    <section class="page" id="page-archive" data-page="archive">
+      <section class="page-hero wrap"><p class="eyebrow">THE COLLECTION</p><h1>Explore the <em>archive.</em></h1><p>Browse community memories, cultural practices and places — gathered in one thoughtful space.</p></section>
+      <section class="wrap archive-tools">
+        <label class="search-box"><span>⌕</span><input id="archiveSearch" type="search" placeholder="Search titles, tags, places or stories..." /><kbd>SEARCH</kbd></label>
+        <div class="filter-row">
+          <div class="filter-chips" id="categoryFilters">
+            <button class="filter-chip active" data-filter="All">All records</button>
+            <button class="filter-chip" data-filter="Places">Places</button>
+            <button class="filter-chip" data-filter="Festivals">Festivals</button>
+            <button class="filter-chip" data-filter="Art & Craft">Art &amp; craft</button>
+            <button class="filter-chip" data-filter="Food">Food</button>
+            <button class="filter-chip" data-filter="Stories">Stories</button>
+          </div>
+          <span class="result-count" id="resultCount"></span>
+        </div>
+        <div class="record-grid archive-grid" id="archiveRecords"></div>
+        <div class="empty-state hidden" id="emptyState"><span>⌕</span><h3>No records found</h3><p>Try another keyword or clear the filters.</p><button class="button button-outline" id="clearFilters">Clear filters</button></div>
+      </section>
+    </section>
+
+    <!-- DETAIL -->
+    <section class="page" id="page-detail" data-page="detail">
+      <div class="wrap detail-wrap" id="detailContent"></div>
+    </section>
+
+    <!-- COLLECTIONS -->
+    <section class="page" id="page-collections" data-page="collections">
+      <section class="page-hero wrap"><p class="eyebrow">CONNECTED MEMORIES</p><h1>Curated <em>collections.</em></h1><p>Explore heritage through themes, shared places and the threads that connect stories.</p></section>
+      <section class="wrap collection-grid" id="collectionGrid"></section>
+    </section>
+
+    <!-- CONTRIBUTE -->
+    <section class="page" id="page-contribute" data-page="contribute">
+      <section class="page-hero wrap"><p class="eyebrow">ADD TO THE ARCHIVE</p><h1>Help keep a story <em>alive.</em></h1><p>Share a photograph, memory or cultural practice. Every contribution is reviewed before it appears publicly.</p></section>
+      <section class="wrap form-layout">
+        <aside class="form-aside"><span class="aside-index">01 — CONTRIBUTE</span><h3>Heritage is held by people.</h3><p>Your knowledge can help preserve details that may not exist in books or official records.</p><div class="note-card"><strong>Before you submit</strong><p>Only share material you have permission to contribute. Credit the original creator or source whenever possible.</p></div><div class="storage-note">SESSION INFORMATION<br><span>Contributions and account details are held in this browser session and are cleared when the page is refreshed.</span></div></aside>
+        <form class="panel form-panel" id="contributionForm">
+          <div class="form-top"><span>CONTRIBUTION FORM</span><span class="required-note">* REQUIRED FIELDS</span></div>
+          <div class="form-grid">
+            <label class="field full"><span>Title <b>*</b></span><input name="title" required maxlength="90" placeholder="e.g. The annual village fair" /></label>
+            <label class="field"><span>Category <b>*</b></span><select name="category" required><option value="">Choose a category</option><option>Places</option><option>Festivals</option><option>Art & Craft</option><option>Food</option><option>Stories</option></select></label>
+            <label class="field"><span>Location <b>*</b></span><input name="location" required placeholder="Town, district or region" /></label>
+            <label class="field"><span>Date / time period</span><input name="date" placeholder="e.g. Every spring / circa 1980" /></label>
+            <label class="field"><span>Tags</span><input name="tags" placeholder="e.g. oral history, family, craft" /></label>
+            <label class="field full"><span>Description <b>*</b></span><textarea name="description" required rows="5" maxlength="1200" placeholder="Describe the item, its context and why it matters..."></textarea></label>
+            <label class="field"><span>Historical context</span><textarea name="context" rows="3" placeholder="What should visitors understand about it?"></textarea></label>
+            <label class="field"><span>Source / attribution <b>*</b></span><textarea name="source" required rows="3" placeholder="Creator, owner, family, oral source or permission details"></textarea></label>
+            <label class="field full"><span>Upload media (image or PDF)</span><input id="mediaFile" name="media" type="file" accept="image/*,.pdf" /><small>Maximum 5 MB. The selected file is previewed in this browser session only.</small><div id="uploadPreview" class="upload-preview"><span class="upload-icon">＋</span><span>No file selected</span></div></label>
+          </div>
+          <div class="form-bottom"><label class="check-field"><input type="checkbox" required /> I have permission to share this material and have provided accurate attribution.</label><button class="button button-dark" type="submit">Submit for review <span>↗</span></button></div>
+          <div class="form-message hidden" id="contributionMessage" role="status"></div>
+        </form>
+      </section>
+    </section>
+
+    <!-- PROFILE -->
+    <section class="page" id="page-profile" data-page="profile">
+      <section class="page-hero wrap"><p class="eyebrow">YOUR SPACE</p><h1>Contributor <em>profile.</em></h1><p>View your contributor details and submitted archive records.</p></section>
+      <section class="wrap profile-layout" id="profileContent"></section>
+    </section>
+
+    <!-- AUTH -->
+    <section class="page" id="page-auth" data-page="auth">
+      <section class="auth-wrap">
+        <div class="auth-art"><p class="eyebrow light">BE PART OF THE STORY</p><h2>Memory is a form<br>of <em>belonging.</em></h2><p>Create a contributor identity to attach your name and context to the stories you share.</p><span>LOK / COMMUNITY ARCHIVE</span></div>
+        <div class="auth-panel">
+          <div class="auth-tabs"><button class="auth-tab active" data-auth="login">Log in</button><button class="auth-tab" data-auth="register">Create account</button></div>
+          <form id="authForm">
+            <h2 id="authTitle">Welcome back.</h2><p id="authSubtitle">Enter your details to continue to the archive.</p>
+            <label class="field"><span>Full name <b class="name-required hidden">*</b></span><input id="authName" placeholder="Your name" /></label>
+            <label class="field"><span>Email address <b>*</b></span><input id="authEmail" type="email" required placeholder="you@example.com" /></label>
+            <label class="field"><span>Password <b>*</b></span><input id="authPassword" type="password" required minlength="4" placeholder="At least 4 characters" /></label>
+            <button class="button button-dark button-wide" type="submit" id="authSubmit">Log in <span>↗</span></button>
+            <p class="session-note">Account access is currently limited to this browser session.</p>
+            <div class="form-message hidden" id="authMessage" role="status"></div>
+          </form>
+        </div>
+      </section>
+    </section>
+
+    <!-- MODERATION -->
+    <section class="page" id="page-moderation" data-page="moderation">
+      <section class="page-hero wrap"><p class="eyebrow">ARCHIVE STEWARDSHIP</p><h1>Review <em>contributions.</em></h1><p>Review submitted contributions and manage their publication status.</p></section>
+      <section class="wrap moderation-wrap">
+        <div class="moderator-banner"><div><span class="status-dot"></span> MODERATION WORKSPACE <p>Review actions apply to the current browser session.</p></div><button class="button button-outline button-small" id="resetDemo">Clear session submissions</button></div>
+        <div class="moderation-stats" id="moderationStats"></div>
+        <div class="moderation-list" id="moderationList"></div>
+      </section>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="page" id="page-about" data-page="about">
+      <section class="page-hero wrap"><p class="eyebrow">WHY LOK EXISTS</p><h1>Preserving what<br><em>makes us, us.</em></h1><p>Local heritage is more than monuments. It is the knowledge, creativity and memory carried by communities.</p></section>
+      <section class="wrap about-grid">
+        <div class="about-image"></div>
+        <div class="about-copy"><p class="eyebrow">THE IDEA</p><h2>A shared home for local memory.</h2><p>Community stories, traditions, photographs and historical records can remain scattered across private collections. When these fragments are difficult to find or pass on, valuable knowledge risks being forgotten.</p><p>LOK imagines a simple, organized digital space where contributors can document cultural materials, add context and attribution, and help others discover connected memories.</p><div class="about-values"><div><strong>01</strong><span>Document with context</span></div><div><strong>02</strong><span>Credit every contributor</span></div><div><strong>03</strong><span>Discover through community</span></div></div></div>
+      </section>
+      <section class="wrap principles"><p class="eyebrow">ARCHIVE PRINCIPLES</p><div class="principle-grid"><article><span>01</span><h3>Respect</h3><p>Honor cultural context, community knowledge and the rights of original creators.</p></article><article><span>02</span><h3>Access</h3><p>Make local heritage easier to browse, search and understand.</p></article><article><span>03</span><h3>Continuity</h3><p>Help memories travel across generations through careful documentation.</p></article></div></section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-main"><div class="footer-brand"><a class="brand brand-light" href="#home"><span class="brand-mark">L</span><span class="brand-copy"><strong>LOK<span>.</span></strong><small>LOCAL CULTURAL HERITAGE ARCHIVE</small></span></a><p>A digital home for the memories that make a place unique.</p></div><div class="footer-links"><div><strong>EXPLORE</strong><a href="#archive">Archive</a><a href="#collections">Collections</a><a href="#about">About LOK</a></div><div><strong>PARTICIPATE</strong><a href="#contribute">Contribute</a><a href="#auth">Contributor login</a><a href="#moderation">Moderation</a></div></div></div>
+    <div class="wrap footer-bottom"><span>© 2026 LOK — LOCAL CULTURAL HERITAGE ARCHIVE</span><span>BUILT TO PRESERVE COMMUNITY MEMORY <b>✳</b></span></div>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+  <script src="js/app.js"></script>
+</body>
+</html>
